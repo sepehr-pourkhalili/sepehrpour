@@ -1,0 +1,15 @@
+!DOCTYPE html
+html
+head
+  titleMy Personal Websitetitle
+  meta charset=UTF-8
+  style
+    body { font-family Arial, sans-serif; margin 40px; }
+    h1 { color #2c3e50; }
+  style
+head
+body
+  h1Hello, I’m Sepehr!h1
+  pWelcome to my personal website hosted on GitHub Pages.p
+body
+html
