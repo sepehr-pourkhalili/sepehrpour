@@ -2,88 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🌟 [Your Name] — Personal Website</title>
+  <title>[Your Name] — Researcher / [Your Title]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* 🌈 General look */
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      color: #333;
-      text-align: center;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f5f5f5;
     }
-
-    /* 🏷️ Header area */
     header {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 40px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #2c3e50;
+    nav {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
     }
-
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    /* 📂 Sections */
-    section {
-      margin: 40px auto;
-      padding: 20px;
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #2c3e50;
-    }
-
-    /* 🔗 Links */
-    a {
+    nav a {
       text-decoration: none;
-      color: #0077cc;
+      color: #555;
       font-weight: bold;
     }
-    a:hover {
-      color: #005999;
+    nav a:hover {
+      color: #111;
     }
-
-    /* 📱 Mobile friendly */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2em; }
-      section { margin: 20px; }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: white;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2.8em;
+      color: #333;
+    }
+    .hero p {
+      font-size: 1.3em;
+      color: #666;
+      margin-top: 10px;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 0 20px 40px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid #eee;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      color: #333;
+    }
+    section p {
+      color: #555;
+      font-size: 1em;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background-color: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>👋 Hi, I’m [Your Name]</h1>
-    <p>Welcome to my little corner of the web 🌍</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section>
-    <h2>✨ About Me</h2>
-    <p>I’m passionate about psychology, research, and exploring new ideas.  
-       I also love biking 🚴 and nature 🌿.</p>
-  </section>
+  <div class="hero">
+    <h1>👋 Hi, I'm [Your Name]</h1>
+    <p>Researcher • [Your Field] • [Something you love or do]</p>
+    <a class="button" href="CV.pdf" target="_blank">Download CV</a>
+  </div>
 
-  <section>
-    <h2>📂 My Projects</h2>
-    <p>Check out my <a href="https://github.com/[your-username]">GitHub</a> for more cool stuff.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Here you write a few sentences about you. What you study, what you like, what you’re passionate about.</p>
+    </section>
 
-  <section>
-    <h2>📬 Contact</h2>
-    <p>You can reach me at: <b>your-email@example.com</b></p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>List or describe 2-3 things you made or want to share: links, GitHub repos, etc.</p>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p>Optional: if you have published things, list them here with links. If not, you can skip or rename this section.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: your-email@example.com</p>
+    </section>
+  </main>
+
+  <footer>
+    © [Your Name] — All rights reserved
+  </footer>
 </body>
 </html>
