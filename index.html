@@ -1,141 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>[Your Name] — Researcher / [Your Title]</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sepehr Pourkhalili - Resume</title>
+
+<!-- Import a stylish font from Google Fonts (Roboto Slab for elegance) -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    /* ----- Color Palette ----- */
+    :root {
+        --dark-blue: #2b2d42;
+        --gray: #8d99ae;
+        --offwhite: #edf2f4;
+        --red1: #ef233c;
+        --red2: #d90429;
+    }
+
+    /* ----- Global ----- */
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f5f5f5;
+        font-family: 'Roboto Slab', serif;
+        background-color: var(--offwhite);
+        color: var(--dark-blue);
+        line-height: 1.6;
     }
+
+    a { text-decoration:none; color: var(--red2); font-weight:bold; }
+    a:hover { color: var(--red1); }
+
+    /* ----- Header / Nav ----- */
     header {
-      background: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+        background-color: var(--dark-blue);
+        padding: 15px 30px;
+        display:flex;
+        justify-content: flex-end;
+        gap: 20px;
+        position: sticky;
+        top:0;
+        z-index:100;
     }
-    nav {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
+    header a {
+        color: var(--offwhite);
+        font-weight: 600;
     }
-    nav a {
-      text-decoration: none;
-      color: #555;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #111;
-    }
+
+    /* ----- Hero Section ----- */
     .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: white;
-      margin-bottom: 40px;
+        text-align: center;
+        padding: 80px 20px;
+        background-color: var(--gray);
+        color: var(--offwhite);
     }
-    .hero h1 {
-      margin: 0;
-      font-size: 2.8em;
-      color: #333;
+    .hero h1 { font-size: 2.8em; margin-bottom:10px; }
+    .hero p { font-size:1.2em; }
+
+    /* ----- Main Content ----- */
+    main { max-width:900px; margin:40px auto; padding:0 20px; }
+    section { margin-bottom:60px; }
+
+    h2 {
+        font-size:2em;
+        color: var(--dark-blue);
+        border-bottom: 2px solid var(--red2);
+        padding-bottom:5px;
+        margin-bottom:20px;
     }
-    .hero p {
-      font-size: 1.3em;
-      color: #666;
-      margin-top: 10px;
+
+    .education-item {
+        margin-bottom:25px;
     }
-    main {
-      max-width: 800px;
-      margin: auto;
-      padding: 0 20px 40px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    .edu-title {
+        font-weight:bold;
+        color: var(--red2);
+        font-size:1.1em;
     }
-    section {
-      padding: 40px 0;
-      border-bottom: 1px solid #eee;
-    }
-    section:last-child {
-      border-bottom: none;
-    }
-    section h2 {
-      margin-top: 0;
-      font-size: 1.8em;
-      color: #333;
-    }
-    section p {
-      color: #555;
-      font-size: 1em;
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 20px;
-    }
-    .button:hover {
-      background-color: #005fa3;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      font-size: 0.9em;
-    }
-  </style>
+    .edu-subtitle { font-style:italic; color: var(--gray); }
+    .edu-details { margin-left:15px; margin-top:5px; color: var(--dark-blue); }
+</style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <div class="hero">
-    <h1>👋 Hi, I'm [Your Name]</h1>
-    <p>Researcher • [Your Field] • [Something you love or do]</p>
-    <a class="button" href="CV.pdf" target="_blank">Download CV</a>
-  </div>
+<!-- ----- Header / Social Links ----- -->
+<header>
+    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+    <a href="https://www.researchgate.net/" target="_blank">ResearchGate</a>
+    <a href="mailto:s.pourkhalili@gmail.com">Email</a>
+</header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Here you write a few sentences about you. What you study, what you like, what you’re passionate about.</p>
+<!-- ----- Hero ----- -->
+<div class="hero">
+    <h1>Sepehr Pourkhalili</h1>
+    <p>Researcher | Psychology | Attention & Cognition</p>
+</div>
+
+<!-- ----- Main Content ----- -->
+<main>
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+
+        <!-- Master -->
+        <div class="education-item">
+            <div class="edu-title">Master of Science in General Psychology (GPA: 17.08/20) — 2019–2023</div>
+            <div class="edu-subtitle">University of Guilan — Rasht, Iran</div>
+            <div class="edu-details">
+                • Master thesis (supervised by Dr. Soltani Shal): The Genetic and Environmental Contribution of Perfectionism, Inferential Confusion, and Saving Behavior
+            </div>
+        </div>
+
+        <!-- Bachelor -->
+        <div class="education-item">
+            <div class="edu-title">Bachelor of Art in Psychology (GPA: 15.65/20) — 2015–2019</div>
+            <div class="edu-subtitle">Shiraz University — Shiraz, Iran</div>
+            <div class="edu-details">
+                • Final Bachelor project (supervised by Dr. Esmaeili): The association between recovery of cancer and well-being in middle-aged women<br>
+                • Project (Experimental psychology course [3 ECTS]; supervised by Dr. Mehdireza Sarafraz): Examining the effect of stress on attention by using Stroop Test
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>List or describe 2-3 things you made or want to share: links, GitHub repos, etc.</p>
-    </section>
+</main>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <p>Optional: if you have published things, list them here with links. If not, you can skip or rename this section.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: your-email@example.com</p>
-    </section>
-  </main>
-
-  <footer>
-    © [Your Name] — All rights reserved
-  </footer>
 </body>
 </html>
