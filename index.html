@@ -1,129 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sepehr Pourkhalili - Resume</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sepehr Pourkhalili — Resume</title>
 
-<!-- Import a stylish font from Google Fonts (Roboto Slab for elegance) -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Montserrat:wght@600;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-    /* ----- Color Palette ----- */
-    :root {
-        --dark-blue: #2b2d42;
-        --gray: #8d99ae;
-        --offwhite: #edf2f4;
-        --red1: #ef233c;
-        --red2: #d90429;
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===== Color palette (your specified blues) ===== */
+    :root{
+      --c1: #03045e;
+      --c2: #023e8a;
+      --c3: #0077b6;
+      --c4: #0096c7;
+      --c5: #00b4d8;
+      --c6: #48cae4;
+      --c7: #90e0ef;
+      --c8: #ade8f4;
+      --c9: #caf0f8;
+
+      --bg: var(--c9);
+      --card: #ffffff;
+      --muted: #4b5563;
+      --accent: var(--c3);
+      --accent-dark: var(--c2);
     }
 
-    /* ----- Global ----- */
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body {
-        font-family: 'Roboto Slab', serif;
-        background-color: var(--offwhite);
-        color: var(--dark-blue);
-        line-height: 1.6;
+    /* ===== Basic reset ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Raleway', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--c9) 0%, #f8fbff 100%);
+      color: var(--c1);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding-bottom:60px;
     }
 
-    a { text-decoration:none; color: var(--red2); font-weight:bold; }
-    a:hover { color: var(--red1); }
-
-    /* ----- Header / Nav ----- */
-    header {
-        background-color: var(--dark-blue);
-        padding: 15px 30px;
-        display:flex;
-        justify-content: flex-end;
-        gap: 20px;
-        position: sticky;
-        top:0;
-        z-index:100;
+    /* ===== Header ===== */
+    header{
+      position:sticky; top:0; z-index:40;
+      background: linear-gradient(90deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
     }
-    header a {
-        color: var(--offwhite);
-        font-weight: 600;
+    .nav {
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 20px;
+      gap:12px;
+    }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand .logo {
+      width:44px; height:44px; border-radius:10px;
+      background: linear-gradient(135deg,var(--c3),var(--c5));
+      display:flex; align-items:center; justify-content:center;
+      color:white; font-weight:700; font-family:'Montserrat',sans-serif;
+      box-shadow: 0 6px 18px rgba(2,46,80,0.12);
+    }
+    .brand .name {
+      font-family:'Montserrat',sans-serif;
+      font-weight:700;
+      color:var(--c1);
+      letter-spacing:0.2px;
     }
 
-    /* ----- Hero Section ----- */
+    .nav-links {
+      display:flex; gap:12px; align-items:center;
+    }
+    .nav-links a {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:8px;
+      color:var(--c1); text-decoration:none; font-weight:600;
+      font-size:0.95rem;
+      transition: all .18s ease;
+    }
+    .nav-links a .fa-stack { margin-right:6px; }
+    .icon-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:8px;
+      background:transparent; color:var(--c1);
+      border: 1px solid rgba(2,46,80,0.06);
+    }
+    .nav-links a:hover{ transform:translateY(-2px); color:var(--accent-dark) }
+
+    /* ===== Hero ===== */
     .hero {
-        text-align: center;
-        padding: 80px 20px;
-        background-color: var(--gray);
-        color: var(--offwhite);
+      max-width:1100px; margin:30px auto 18px; padding:28px 20px;
+      display:grid; grid-template-columns: 1fr; gap:18px;
+      align-items:center;
     }
-    .hero h1 { font-size: 2.8em; margin-bottom:10px; }
-    .hero p { font-size:1.2em; }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+      padding:28px; border-radius:12px; box-shadow: 0 10px 30px rgba(3,4,94,0.06);
+      display:flex; gap:20px; align-items:center; flex-wrap:wrap;
+    }
+    .hero-meta {
+      flex:1;
+    }
+    .hero h1{
+      font-family:'Montserrat',sans-serif; font-weight:700;
+      font-size:clamp(20px,4.2vw,34px); color:var(--c1);
+    }
+    .tagline{
+      margin-top:6px; color:var(--muted);
+      font-size:1.02rem; font-family:'Josefin Sans', sans-serif;
+    }
+    .hero-cta { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
 
-    /* ----- Main Content ----- */
-    main { max-width:900px; margin:40px auto; padding:0 20px; }
-    section { margin-bottom:60px; }
+    .btn {
+      display:inline-block; padding:10px 14px; border-radius:10px;
+      background: linear-gradient(90deg,var(--accent),var(--c4)); color:white;
+      text-decoration:none; font-weight:700; font-family:'Montserrat',sans-serif;
+      box-shadow: 0 6px 18px rgba(2,46,80,0.08);
+      transition: transform .14s ease;
+    }
+    .btn.secondary {
+      background:transparent; color:var(--c1); border:1px solid rgba(3,4,94,0.06);
+    }
+    .btn:hover { transform:translateY(-3px) }
 
-    h2 {
-        font-size:2em;
-        color: var(--dark-blue);
-        border-bottom: 2px solid var(--red2);
-        padding-bottom:5px;
-        margin-bottom:20px;
+    /* ===== Main content area ===== */
+    main{ max-width:1100px; margin:18px auto; padding:0 18px; display:flex; gap:28px; flex-direction:column; }
+
+    section.card {
+      background:var(--card);
+      border-radius:12px;
+      padding:22px;
+      box-shadow: 0 8px 26px rgba(2,46,80,0.04);
+      border: 1px solid rgba(2,46,80,0.03);
+    }
+    .section-title {
+      display:flex; align-items:end; gap:12px; margin-bottom:14px;
+    }
+    .section-title h2 {
+      font-family:'Montserrat',sans-serif; font-weight:700; color:var(--c2);
+      font-size:1.26rem;
+    }
+    .section-sub {
+      color:var(--muted); font-size:0.95rem; margin-left:auto;
     }
 
-    .education-item {
-        margin-bottom:25px;
+    /* ===== About ===== */
+    .about p {
+      font-size:1rem; color:var(--c1); font-family:'Josefin Sans',sans-serif;
     }
-    .edu-title {
-        font-weight:bold;
-        color: var(--red2);
-        font-size:1.1em;
+
+    /* ===== Education ===== */
+    .edu-list { display:flex; flex-direction:column; gap:14px; margin-top:6px }
+    .edu-item { border-left:3px solid var(--c4); padding:10px 14px; border-radius:8px; background: linear-gradient(180deg, rgba(10,100,160,0.02), transparent); }
+    .edu-item .title { font-weight:700; color:var(--c1); font-family:'Montserrat',sans-serif }
+    .edu-item .meta { color:var(--muted); font-size:0.94rem; margin-top:6px }
+    .edu-item .tiny { margin-top:8px; color:var(--muted); font-size:0.95rem }
+
+    /* ===== Publications & Conferences ===== */
+    .pub-list, .conf-list { display:flex; flex-direction:column; gap:12px; margin-top:8px }
+    .pub-item { padding:10px; border-radius:8px; background: linear-gradient(180deg, rgba(3,118,182,0.02), transparent); }
+    .pub-item .authors { font-weight:600; color:var(--c1); font-family:'Raleway',sans-serif }
+    .pub-item .meta { color:var(--muted); font-size:0.95rem; margin-top:6px }
+    .pub-item a { color:var(--accent); font-weight:600; text-decoration:none }
+    .pub-item a:hover { color:var(--c2) }
+
+    /* ===== Footer ===== */
+    footer { max-width:1100px; margin:18px auto; text-align:center; color:var(--muted); font-size:0.92rem }
+
+    /* ===== Responsive ===== */
+    @media (min-width:900px){
+      .hero { grid-template-columns: 1fr 320px; }
+      .hero-card { padding:36px; }
     }
-    .edu-subtitle { font-style:italic; color: var(--gray); }
-    .edu-details { margin-left:15px; margin-top:5px; color: var(--dark-blue); }
-</style>
+    @media (max-width:500px){
+      .nav { padding:10px }
+      .nav-links a { display:none }
+      .nav-links .icons-only { display:flex; gap:8px }
+      .brand .name { display:none }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- ----- Header / Social Links ----- -->
-<header>
-    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-    <a href="https://www.researchgate.net/" target="_blank">ResearchGate</a>
-    <a href="mailto:s.pourkhalili@gmail.com">Email</a>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div class="name">Sepehr Pourkhalili</div>
+      </div>
 
-<!-- ----- Hero ----- -->
-<div class="hero">
-    <h1>Sepehr Pourkhalili</h1>
-    <p>Researcher | Psychology | Attention & Cognition</p>
-</div>
+      <div class="nav-links" aria-hidden="false">
+        <!-- Icons + small labels; change links to your profiles -->
+        <a class="icon-btn" href="https://scholar.google.com/" target="_blank" title="Google Scholar" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap" style="color:var(--c3)"></i>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fab fa-linkedin" style="color:var(--c2)"></i>
+        </a>
+        <a class="icon-btn" href="https://www.researchgate.net/" target="_blank" title="ResearchGate" aria-label="ResearchGate">
+          <i class="fab fa-researchgate" style="color:var(--c5)"></i>
+        </a>
+        <a class="icon-btn" href="mailto:s.pourkhalili@gmail.com" title="Email" aria-label="Email">
+          <i class="fas fa-envelope" style="color:var(--c1)"></i>
+        </a>
+      </div>
+    </div>
+  </header>
 
-<!-- ----- Main Content ----- -->
-<main>
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-card" role="region" aria-label="Intro">
+      <div class="hero-meta">
+        <h1 id="hero-heading">Sepehr Pourkhalili</h1>
+        <div class="tagline">Psychology researcher • Curious about the brain, attention & cognition</div>
 
-        <!-- Master -->
-        <div class="education-item">
-            <div class="edu-title">Master of Science in General Psychology (GPA: 17.08/20) — 2019–2023</div>
-            <div class="edu-subtitle">University of Guilan — Rasht, Iran</div>
-            <div class="edu-details">
-                • Master thesis (supervised by Dr. Soltani Shal): The Genetic and Environmental Contribution of Perfectionism, Inferential Confusion, and Saving Behavior
-            </div>
+        <div class="hero-cta">
+          <a class="btn" href="#about">About</a>
+          <a class="btn secondary" href="#publications">Publications</a>
         </div>
+      </div>
 
-        <!-- Bachelor -->
-        <div class="education-item">
-            <div class="edu-title">Bachelor of Art in Psychology (GPA: 15.65/20) — 2015–2019</div>
-            <div class="edu-subtitle">Shiraz University — Shiraz, Iran</div>
-            <div class="edu-details">
-                • Final Bachelor project (supervised by Dr. Esmaeili): The association between recovery of cancer and well-being in middle-aged women<br>
-                • Project (Experimental psychology course [3 ECTS]; supervised by Dr. Mehdireza Sarafraz): Examining the effect of stress on attention by using Stroop Test
-            </div>
+      <div style="min-width:220px; text-align:center;">
+        <!-- Optional profile image (if you upload one named profile.jpg) -->
+        <div style="width:160px;height:160px;border-radius:14px;margin:0 auto;overflow:hidden;box-shadow:0 8px 20px rgba(2,46,80,0.08);">
+          <!-- If you upload profile.jpg to repo, it will show; otherwise this is a gradient placeholder -->
+          <img src="profile.jpg" alt="Sepehr Pourkhalili" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none'">
+          <div id="placeholder" style="display:block;width:100%;height:100%;background:linear-gradient(135deg,var(--c4),var(--c6));color:white;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:36px;">
+            SP
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about" class="card about" aria-labelledby="about-title">
+      <div class="section-title">
+        <h2 id="about-title">About</h2>
+        <div class="section-sub">Curiosity • Research • Growth</div>
+      </div>
+      <p style="margin-top:8px;">
+        Hi! I’m passionate about psychology and love exploring how the brain works. I enjoy walking, filming, photography, and reading psychology books — and I'm always keen to learn more and deepen my knowledge in the field.
+      </p>
     </section>
 
-</main>
+    <!-- EDUCATION (short) -->
+    <section id="education" class="card" aria-labelledby="edu-title">
+      <div class="section-title">
+        <h2 id="edu-title">Education</h2>
+        <div class="section-sub">Highlights</div>
+      </div>
+
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="title">M.Sc. in General Psychology — University of Guilan (2019–2023)</div>
+          <div class="meta">Rasht, Iran • GPA: 17.08/20</div>
+          <div class="tiny">Thesis: The Genetic and Environmental Contribution of Perfectionism, Inferential Confusion, and Saving Behavior</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="title">B.A. in Psychology — Shiraz University (2015–2019)</div>
+          <div class="meta">Shiraz, Iran • GPA: 15.65/20</div>
+          <div class="tiny">Projects: Cancer recovery & well-being; Stroop Test study on stress and attention</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="card" aria-labelledby="pub-title">
+      <div class="section-title">
+        <h2 id="pub-title">Publications</h2>
+        <div class="section-sub">Selected</div>
+      </div>
+
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="authors">Meidenbauer, K. L., Pourkhalili, S., Schertz, K. E., Janey, E., & Berman, M. (2025).</div>
+          <div class="meta"><em>Sensitive to what? Environmental sensitivity primarily amplifies affective responses to features of the social rather than physical environment.</em> <a href="https://doi.org/10.31234/osf.io/7zdak_v1" target="_blank">https://doi.org/10.31234/osf.io/7zdak_v1</a></div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Pourkhalili, S., Soltani Shal, R., Abolghasemi, A., Dianatkhah, M., & Gharipour, M. (2024).</div>
+          <div class="meta"><em>Estimating the heritability of hoarding symptoms: Insights from a classical twin study.</em> Iranian Journal of Psychiatry, 19(4), 424–430.</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Sarafraz, M. R., Pourkhalili, S. (2023).</div>
+          <div class="meta"><em>اصلاح‌طلب و اصول‌گرا: یک مطالعه مقایسه‌ای کوچک در مورد شخصیت و سلامت روان</em> [Reformist and Fundamentalist: A Small-Scale Comparative Study of Personality and Mental Health]. Political Quarterly, 53(3), 472–449. doi: 10.22059/jpq.2020.303181.1007596</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Pourkhalili, S., Sadeghi Chookami, E., & Abolghasemi, A. (2022).</div>
+          <div class="meta"><em>Coronavirus Anxiety: The Predictive Role of Perfectionism and Self-compassion.</em> Iranian Journal of Health Psychology, 5(1). <a href="https://doi.org/10.30473/ijohp.2022.57602.1165" target="_blank">https://doi.org/10.30473/ijohp.2022.57602.1165</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFERENCES -->
+    <section id="conferences" class="card" aria-labelledby="conf-title">
+      <div class="section-title">
+        <h2 id="conf-title">Conference Presentations & Posters</h2>
+        <div class="section-sub">Selected</div>
+      </div>
+
+      <div class="conf-list">
+        <div class="pub-item">
+          <div class="authors">Pourkhalili, S. (June, 2023).</div>
+          <div class="meta"><em>The contribution of environmental and genetic factors to hoarding behavior and its subscales.</em> 6th World Congress on Twin Pregnancy & 18th Congress of the International Society Twins Studies, Budapest, Hungary.</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Pourkhalili, S. (June, 2023).</div>
+          <div class="meta"><em>The Interplay Between Genetics and Environment in the Development of Perfectionism: Evidence From a Classical Twin Study.</em> 6th World Congress on Twin Pregnancy & 18th Congress of the International Society Twins Studies, Budapest, Hungary.</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Sadeghi, E.; Bagheri Sheykhan Gafshe, F.; Daryayi, S.; Pourkhalili, S. (Jan 21–22, 2021).</div>
+          <div class="meta"><em>نقش انعطاف‌پذیری شناختی و تاب‌آوری در پیش‌بینی افسردگی دانشجویان طی همه‌گیری کرونا ویروس 2019</em> [Poster]. First National Congress of University and Covid-19, Tehran, Iran.</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Sadeghi, E.; Bagheri Sheykhan Gafshe, F.; Daryayi, S.; Pourkhalili, S. (Jan 21–22, 2021).</div>
+          <div class="meta"><em>چالش‌های آموزش مجازی در دانشجویان قبل و بعد از همه‌گیری ویروس کووید-19</em> [Poster]. First National Congress of University and Covid-19, Tehran, Iran.</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Pourkhalili, S. (Nov, 2020).</div>
+          <div class="meta"><em>نانو مارکتینگ و بازاریابی؛ مروری بر تهدیدها و فرصت‌ها</em> [Talk]. First Cognitive Science Student Congress, Rasht, Iran.</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="authors">Mohammadi, R.; Sadeghi Chookami, E.; Safarian Pour, K.; Pourkhalili, S. (Nov, 2020).</div>
+          <div class="meta"><em>مروری بر نقش هوش مصنوعی در توانمندی شناختی مقابله با اختلالات و بیماری‌های جسمی و روانی</em> [Poster]. First Cognitive Science Student Congress, Rasht, Iran.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © Sepehr Pourkhalili — s.pourkhalili@gmail.com
+  </footer>
+
+  <!-- small script to hide placeholder if image loads -->
+  <script>
+    const img = document.querySelector('img[alt="Sepehr Pourkhalili"]');
+    if(img){
+      img.addEventListener('load', ()=> {
+        const ph = document.getElementById('placeholder');
+        if(ph) ph.style.display='none';
+      })
+      img.addEventListener('error', ()=> {
+        // keep placeholder visible
+      })
+    }
+  </script>
 
 </body>
 </html>
