@@ -46,8 +46,14 @@
 
     /* ===== Header ===== */
     header{
-      position:sticky; top:0; z-index:40;
-      background: linear-gradient(90deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+      position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* keeps it above everything else */
+        background-color: white; /* or your preferred color */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional nice shadow */
+}
       backdrop-filter: blur(6px);
       border-bottom: 1px solid rgba(0,0,0,0.04);
     }
@@ -190,26 +196,24 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <div class="nav" role="navigation" aria-label="Main navigation">
-      <div class="brand">
-        <div class="logo">SP</div>
-        <div class="name">Sepehr Pourkhalili</div>
-      </div>
+<div class="logo">
+  <img src="images/Sepehr.jpg" alt="Sepehr Pourkhalili"
+       style="width:40px;height:40px;border-radius:50%;object-fit:cover;">
+</div>
 
       <div class="nav-links" aria-hidden="false">
         <!-- Icons + small labels; change links to your profiles -->
         <a class="icon-btn" href="https://scholar.google.com/citations?user=PPQe3yIAAAAJ&hl=en&authuser=1" target="_blank" title="Google Scholar" aria-label="Google Scholar">
-          <img src="images/google scholar.png" alt="Google Scholar" style="width:22px;height:22px;object-fit:contain;">
+          <img src="images/google scholar.png" alt="Google Scholar" style="width:32px;height:32px;object-fit:contain;">
         </a>
         <a class="icon-btn" href="https://www.linkedin.com/in/sepehr-pourkhalili-6192ba238/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-          <img src="images/linkedin.png" alt="LinkedIn" style="width:22px;height:22px;object-fit:contain;">
+          <img src="images/linkedin.png" alt="LinkedIn" style="width:32px;height:32px;object-fit:contain;">
         </a>
         <a class="icon-btn" href="https://www.researchgate.net/profile/Sepehr-Pourkhalili?ev=hdr_xprf" target="_blank" title="ResearchGate" aria-label="ResearchGate">
-          <img src="images/research gate.png" alt="Research Gate" style="width:22px;height:22px;object-fit:contain;">
+          <img src="images/research gate.png" alt="Research Gate" style="width:32px;height:32px;object-fit:contain;">
         </a>
         <a class="icon-btn" href="mailto:s.pourkhalili@gmail.com" title="Email" aria-label="Email">
-           <img src="images/email.webp" alt="Email" style="width:22px;height:22px;object-fit:contain;">
+           <img src="images/email.webp" alt="Email" style="width:32px;height:32px;object-fit:contain;">
         </a>
       </div>
     </div>
